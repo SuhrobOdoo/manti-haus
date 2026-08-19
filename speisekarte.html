@@ -12,37 +12,45 @@
 <body>
 
   <!-- ====== PAGE HERO ====== -->
-  <header class="page-hero">
+  <header class="page-hero" style="padding: 6rem 0 3rem 0; min-height: auto;">
     <div class="container">
       <div class="section__label section__label--center reveal" data-i18n="menu.page.label">Unser Menü</div>
-      <h1 class="page-hero__title reveal reveal-d1" data-i18n="menu.page.title">SPEISEKARTE</h1>
-      <p class="page-hero__subtitle reveal reveal-d2" data-i18n="menu.page.subtitle">Handgemacht. Frisch gedämpft. Mit Liebe serviert.</p>
+      <h1 class="page-hero__title reveal reveal-d1" data-i18n="menu.page.title" style="margin-bottom: 1rem;">SPEISEKARTE</h1>
+      <p class="page-hero__subtitle reveal reveal-d2" data-i18n="menu.page.subtitle" style="margin-bottom: 0;">Handgemacht. Frisch gedämpft. Mit Liebe serviert.</p>
     </div>
   </header>
 
+  <!-- ====== CATEGORY NAVIGATION ====== -->
+  <div class="menu-nav-wrapper">
+    <div class="container">
+      <div class="menu-filters" id="category-filters" role="tablist">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
   <!-- ====== MENU SECTION ====== -->
-  <section class="section" style="padding-top:3rem;">
+  <section class="section" style="padding-top: 2rem;">
     <div class="container">
       
       <!-- Search & Filters -->
-      <div class="reveal reveal-d3">
+      <div class="menu-controls reveal reveal-d1">
+        
         <div class="menu-search">
-          <span class="menu-search__icon">🔍</span>
-          <input type="text" id="menu-search" class="search-input" data-i18n-placeholder="menu.search.placeholder" placeholder="Nach Gerichten suchen..." aria-label="Speisekarte durchsuchen">
+          <svg class="menu-search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="menu-search" class="menu-search__input" data-i18n-placeholder="menu.search.placeholder" placeholder="Gericht suchen..." aria-label="Speisekarte durchsuchen">
         </div>
 
-        <label class="veg-toggle">
+        <label class="custom-toggle">
           <input type="checkbox" id="veg-toggle-input">
-          <span class="veg-toggle__label" data-i18n="menu.filter.veg">Nur vegetarische Gerichte anzeigen 🌿</span>
+          <div class="custom-toggle__switch"></div>
+          <span class="custom-toggle__label" data-i18n="menu.filter.veg">Nur vegetarische Gerichte</span>
         </label>
 
-        <div class="menu-filters" id="category-filters" role="tablist">
-          <!-- Rendered by JS -->
-        </div>
       </div>
 
       <!-- Menu Grid -->
-      <div class="menu-grid" id="full-menu-grid" style="margin-top:2rem;">
+      <div class="menu-grid" id="full-menu-grid" style="margin-top: 3rem;">
         <!-- Rendered by JS -->
       </div>
       
@@ -73,7 +81,7 @@
         btn.className = `menu-filter ${cat.id === 'all' ? 'active' : ''}`;
         btn.dataset.id = cat.id;
         btn.setAttribute('role', 'tab');
-        btn.innerHTML = `${cat.icon} ${cat.name}`;
+        btn.innerHTML = `${cat.icon} ${tStr(cat.name)}`;
         
         btn.addEventListener('click', () => {
           document.querySelectorAll('.menu-filter').forEach(b => b.classList.remove('active'));
@@ -102,19 +110,17 @@
         }
 
         if (products.length === 0) {
-          grid.innerHTML = '<div id="no-results" class="no-results" data-i18n="menu.empty">Keine Gerichte gefunden. Bitte passe deine Filter an.</div>';
-          updateContent();
+          grid.innerHTML = `<div id="no-results" class="no-results" data-i18n="menu.empty">${translate('menu.empty') || 'Keine Gerichte gefunden. Bitte passe deine Filter an.'}</div>`;
           return;
         }
 
         // Animate entries slightly
         products.forEach((product, i) => {
-          const delayClass = `reveal-d${(i % 4) + 1}`;
           const cardHtml = renderProductCard(product);
-          // Insert with reveal class
           const temp = document.createElement('div');
           temp.innerHTML = cardHtml;
           const cardEl = temp.firstElementChild;
+          
           if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
              cardEl.style.opacity = '0';
              cardEl.style.transform = 'translateY(20px)';
@@ -142,6 +148,7 @@
 
       // Initial render
       renderMenu();
+      initRevealAnimations();
     });
   </script>
 </body>

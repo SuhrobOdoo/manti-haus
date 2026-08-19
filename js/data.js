@@ -77,7 +77,7 @@ const MENU_PRODUCTS = [
       ru: 'Пшеничная мука, куриная грудка, лук, укроп, мята, соль, перец'
     },
     allergens: { de: ['Gluten'], en: ['Gluten'], ru: ['Глютен'] },
-    price: 9.90,
+    price: 9.50,
     image: 'images/menu_chicken.jpg',
     vegetarian: false,
     featured: true,
@@ -98,7 +98,7 @@ const MENU_PRODUCTS = [
       ru: 'Пшеничная мука, говядина, баранина, лук, специи, гранат'
     },
     allergens: { de: ['Gluten'], en: ['Gluten'], ru: ['Глютен'] },
-    price: 13.90,
+    price: 10.90,
     image: 'images/menu_signature.jpg',
     vegetarian: false,
     featured: true,
@@ -119,7 +119,7 @@ const MENU_PRODUCTS = [
       ru: 'Пшеничная мука, говядина, лук, перечная паста, чили, помидоры'
     },
     allergens: { de: ['Gluten'], en: ['Gluten'], ru: ['Глютен'] },
-    price: 10.90,
+    price: 10.50,
     image: 'images/menu_classic.jpg',
     vegetarian: false,
     featured: false,
@@ -163,7 +163,7 @@ const MENU_PRODUCTS = [
       ru: 'Пшеничная мука, картофель, лук, сливочное масло, зира, соль'
     },
     allergens: { de: ['Gluten', 'Milch'], en: ['Gluten', 'Dairy'], ru: ['Глютен', 'Молоко'] },
-    price: 8.90,
+    price: 8.50,
     image: 'images/menu_veggie.jpg',
     vegetarian: true,
     featured: false,
@@ -293,7 +293,7 @@ const MENU_PRODUCTS = [
       ru: 'Йогурт, чеснок, мята, соль'
     },
     allergens: { de: ['Milch'], en: ['Dairy'], ru: ['Молоко'] },
-    price: 1.90,
+    price: 1.50,
     image: 'images/gallery_4.jpg',
     vegetarian: true,
     featured: false,
@@ -314,7 +314,7 @@ const MENU_PRODUCTS = [
       ru: 'Чили, болгарский перец, помидоры, чеснок, масло'
     },
     allergens: { de: [], en: [], ru: [] },
-    price: 1.90,
+    price: 1.50,
     image: 'images/gallery_4.jpg',
     vegetarian: true,
     featured: false,
@@ -350,7 +350,7 @@ const MENU_PRODUCTS = [
     description: { de: 'Natürliches Mineralwasser, 0,5l.', en: 'Natural mineral water, 0.5l.', ru: 'Минеральная вода, 0,5 л.' },
     ingredients: { de: 'Wasser', en: 'Water', ru: 'Вода' },
     allergens: { de: [], en: [], ru: [] },
-    price: 2.50,
+    price: 2.00,
     image: null,
     vegetarian: true,
     featured: false,
@@ -363,7 +363,7 @@ const MENU_PRODUCTS = [
     description: { de: 'Das Original, 0,33l.', en: 'The Original, 0.33l.', ru: 'Оригинальная, 0,33 л.' },
     ingredients: { de: '', en: '', ru: '' },
     allergens: { de: [], en: [], ru: [] },
-    price: 2.90,
+    price: 2.50,
     image: null,
     vegetarian: true,
     featured: false,
@@ -376,7 +376,7 @@ const MENU_PRODUCTS = [
     description: { de: 'Erfrischend fruchtig, 0,33l.', en: 'Refreshingly fruity, 0.33l.', ru: 'Освежающе фруктовая, 0,33 л.' },
     ingredients: { de: '', en: '', ru: '' },
     allergens: { de: [], en: [], ru: [] },
-    price: 2.90,
+    price: 2.50,
     image: null,
     vegetarian: true,
     featured: false,
@@ -389,7 +389,7 @@ const MENU_PRODUCTS = [
     description: { de: 'Zitronen-Limetten-Erfrischung, 0,33l.', en: 'Lemon-lime refreshment, 0.33l.', ru: 'Лимонно-лаймовая свежесть, 0,33 л.' },
     ingredients: { de: '', en: '', ru: '' },
     allergens: { de: [], en: [], ru: [] },
-    price: 2.90,
+    price: 2.50,
     image: null,
     vegetarian: true,
     featured: false,
@@ -406,7 +406,7 @@ const MENU_PRODUCTS = [
     },
     ingredients: { de: 'Schwarzer Tee', en: 'Black Tea', ru: 'Черный Чай' },
     allergens: { de: [], en: [], ru: [] },
-    price: 3.50,
+    price: 2.50,
     image: null,
     vegetarian: true,
     featured: false,
@@ -423,7 +423,7 @@ const MENU_PRODUCTS = [
     },
     ingredients: { de: 'Grüner Tee', en: 'Green tea', ru: 'Зеленый чай' },
     allergens: { de: [], en: [], ru: [] },
-    price: 3.50,
+    price: 2.50,
     image: null,
     vegetarian: true,
     featured: false,
@@ -531,10 +531,10 @@ function searchProducts(query) {
   const q = query.toLowerCase().trim();
   if (!q) return MENU_PRODUCTS;
   return MENU_PRODUCTS.filter(p =>
-    p.name.toLowerCase().includes(q) ||
-    p.description.toLowerCase().includes(q) ||
+    tStr(p.name).toLowerCase().includes(q) ||
+    tStr(p.description).toLowerCase().includes(q) ||
     p.category.toLowerCase().includes(q) ||
-    (p.ingredients && p.ingredients.toLowerCase().includes(q))
+    (p.ingredients && tStr(p.ingredients).toLowerCase().includes(q))
   );
 }
 
