@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lerne die Geschichte hinter MANTI HAUS kennen. Zentralasiatische Wurzeln, handgemachte Tradition und ein neues Zuhause in Deutschland.">
+  <title>Über uns | MANTI HAUS</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- ====== PAGE HERO ====== -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="section__label section__label--center reveal" data-i18n="about.page.label">Unsere Geschichte</div>
+      <h1 class="page-hero__title reveal reveal-d1" data-i18n="about.page.title">Eine Tradition.<br><em>Ein neues Zuhause.</em></h1>
+    </div>
+  </header>
+
+  <!-- ====== CONTENT ====== -->
+  <section class="section">
+    <div class="container container--narrow">
+      
+      <!-- Wurzeln -->
+      <div class="reveal" style="margin-bottom:4rem;">
+        <h2 class="section__title" data-i18n="about.roots.title">Unsere Wurzeln</h2>
+        <div class="about-text">
+          <p data-i18n="about.roots.text1">Tief in Zentralasien, entlang der alten Seidenstraße, ist Essen mehr als nur Nahrungsaufnahme. Es ist der Mittelpunkt des familiären und gesellschaftlichen Lebens. Und im Zentrum dieses Lebens stehen <strong>Manti</strong>.</p>
+          <p data-i18n="about.roots.text2">Seit Generationen werden diese feinen Teigtaschen in Handarbeit hergestellt. Das Ausrollen des Teigs, das Vorbereiten der Füllung und das gemeinsame Falten am Tisch — es ist ein Ritual, das Menschen zusammenbringt.</p>
+        </div>
+      </div>
+
+      <!-- Idee & Image -->
+      <div class="reveal reveal-d1" style="margin-bottom:4rem;">
+        <img src="images/brand_story.jpg" alt="Familie isst gemeinsam" style="border-radius:var(--radius-lg); margin-bottom:2rem; width:100%; height:400px; object-fit:cover;">
+        <h2 class="section__title" data-i18n="about.idea.title">Unsere Idee</h2>
+        <div class="about-text">
+          <p data-i18n="about.idea.text1">Als wir nach Deutschland kamen, vermissten wir diesen authentischen Geschmack. Wir fanden viele großartige Restaurants, aber echte, handgemachte zentralasiatische Manti in einer modernen, zugänglichen Umgebung fehlten.</p>
+          <p data-i18n="about.idea.text2">So entstand die Idee für <strong>MANTI HAUS</strong>. Wir wollten einen Ort schaffen, an dem wir unsere Esskultur teilen können — ohne Klischees, sondern modern interpretiert für eine europäische Großstadt.</p>
+        </div>
+      </div>
+
+      <!-- Küche -->
+      <div class="reveal reveal-d2" style="margin-bottom:4rem;">
+        <h2 class="section__title" data-i18n="about.kitchen.title">Unsere Küche</h2>
+        <div class="about-text">
+          <p data-i18n="about.kitchen.text1">Wir machen keine Kompromisse bei der Qualität. Jeder Teig wird täglich frisch bei uns im Haus geknetet. Unsere Füllungen bestehen aus hochwertigen, regionalen Zutaten, kombiniert mit traditionellen zentralasiatischen Gewürzen wie Kreuzkümmel und Koriander.</p>
+          <p data-i18n="about.kitchen.text2">Gedämpft in speziellen Manti-Töpfen (Mantovarka), behalten sie ihren vollen Geschmack und ihre einzigartige Textur.</p>
+        </div>
+      </div>
+
+      <!-- Zukunft -->
+      <div class="reveal reveal-d3">
+        <h2 class="section__title" data-i18n="about.future.title">Unsere Zukunft</h2>
+        <div class="about-text">
+          <p data-i18n="about.future.text1"><strong>MANTI HAUS</strong> ist mehr als nur ein Restaurant. Es ist eine Brücke zwischen Kulturen. Wir laden dich ein, Platz zu nehmen, zu teilen und eine jahrhundertealte Tradition neu zu entdecken.</p>
+        </div>
+        <div style="margin-top:2.5rem;">
+          <a href="speisekarte.html" class="btn btn--primary" data-i18n="home.featured.btn">Speisekarte ansehen</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderNav('ueber-uns');
+      renderFooter();
+      renderMobileBar();
+      initRevealAnimations();
+      initRevealAnimations();
+      updateDOMTranslations(); // Ensure translated text is populated
+    });
+  </script>
+</body>
+</html>

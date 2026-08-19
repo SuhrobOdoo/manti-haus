@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entdecke unsere Speisekarte. Handgemachte Manti, frische Beilagen und zentralasiatische Desserts.">
+  <meta name="keywords" content="Speisekarte, Manti, Menü, Zentralasiatisch, Restaurant, Berlin, Vegetarisch">
+  <title>Speisekarte | MANTI HAUS</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥟</text></svg>">
+</head>
+<body>
+
+  <!-- ====== PAGE HERO ====== -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="section__label section__label--center reveal" data-i18n="menu.page.label">Unser Menü</div>
+      <h1 class="page-hero__title reveal reveal-d1" data-i18n="menu.page.title">SPEISEKARTE</h1>
+      <p class="page-hero__subtitle reveal reveal-d2" data-i18n="menu.page.subtitle">Handgemacht. Frisch gedämpft. Mit Liebe serviert.</p>
+    </div>
+  </header>
+
+  <!-- ====== MENU SECTION ====== -->
+  <section class="section" style="padding-top:3rem;">
+    <div class="container">
+      
+      <!-- Search & Filters -->
+      <div class="reveal reveal-d3">
+        <div class="menu-search">
+          <span class="menu-search__icon">🔍</span>
+          <input type="text" id="menu-search" class="search-input" data-i18n-placeholder="menu.search.placeholder" placeholder="Nach Gerichten suchen..." aria-label="Speisekarte durchsuchen">
+        </div>
+
+        <label class="veg-toggle">
+          <input type="checkbox" id="veg-toggle-input">
+          <span class="veg-toggle__label" data-i18n="menu.filter.veg">Nur vegetarische Gerichte anzeigen 🌿</span>
+        </label>
+
+        <div class="menu-filters" id="category-filters" role="tablist">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="full-menu-grid" style="margin-top:2rem;">
+        <!-- Rendered by JS -->
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderNav('speisekarte');
+      renderFooter();
+      renderMobileBar();
+      updateContent();
+
+      const grid = document.getElementById('full-menu-grid');
+      const filtersContainer = document.getElementById('category-filters');
+      const searchInput = document.getElementById('menu-search');
+      const vegToggle = document.getElementById('veg-toggle-input');
+      
+      let currentCategory = 'all';
+
+      // 1. Render filter buttons
+      MENU_CATEGORIES.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = `menu-filter ${cat.id === 'all' ? 'active' : ''}`;
+        btn.dataset.id = cat.id;
+        btn.setAttribute('role', 'tab');
+        btn.innerHTML = `${cat.icon} ${cat.name}`;
+        
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.menu-filter').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = cat.id;
+          renderMenu();
+        });
+        
+        filtersContainer.appendChild(btn);
+      });
+
+      // 2. Render logic
+      function renderMenu() {
+        grid.innerHTML = '';
+        let query = searchInput.value;
+        let products = searchProducts(query);
+        
+        // Filter by category
+        if (currentCategory !== 'all') {
+          products = products.filter(p => p.category === currentCategory);
+        }
+        
+        // Filter by vegetarian
+        if (vegToggle.checked) {
+          products = products.filter(p => p.vegetarian);
+        }
+
+        if (products.length === 0) {
+          grid.innerHTML = '<div id="no-results" class="no-results" data-i18n="menu.empty">Keine Gerichte gefunden. Bitte passe deine Filter an.</div>';
+          updateContent();
+          return;
+        }
+
+        // Animate entries slightly
+        products.forEach((product, i) => {
+          const delayClass = `reveal-d${(i % 4) + 1}`;
+          const cardHtml = renderProductCard(product);
+          // Insert with reveal class
+          const temp = document.createElement('div');
+          temp.innerHTML = cardHtml;
+          const cardEl = temp.firstElementChild;
+          if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+             cardEl.style.opacity = '0';
+             cardEl.style.transform = 'translateY(20px)';
+             setTimeout(() => {
+                cardEl.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                cardEl.style.opacity = '1';
+                cardEl.style.transform = 'translateY(0)';
+             }, 50 * i);
+          }
+          grid.appendChild(cardEl);
+        });
+      }
+
+      // 3. Bind events
+      searchInput.addEventListener('input', renderMenu);
+      vegToggle.addEventListener('change', renderMenu);
+      
+      // Click cards to open modal
+      grid.addEventListener('click', e => {
+        const card = e.target.closest('.card');
+        const btn = e.target.closest('.card__btn');
+        if (btn) return; // Cart button handled by onclick
+        if (card) openProductModal(card.dataset.id);
+      });
+
+      // Initial render
+      renderMenu();
+    });
+  </script>
+</body>
+</html>

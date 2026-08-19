@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bestelle Manti online zur Abholung oder Lieferung.">
+  <title>Online Bestellen | MANTI HAUS</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body style="background:var(--warm-white);">
+
+  <!-- ====== PAGE HERO ====== -->
+  <header class="page-hero" style="padding-bottom:2rem;">
+    <div class="container">
+      <div class="section__label section__label--center reveal" data-i18n="order.page.label">Lieferung & Abholung</div>
+      <h1 class="page-hero__title reveal reveal-d1" data-i18n="order.page.title">ONLINE BESTELLEN</h1>
+    </div>
+  </header>
+
+  <!-- ====== ORDER LAYOUT ====== -->
+  <section class="section" style="padding-top:2rem;">
+    <div class="container">
+      <div class="order-layout">
+        
+        <!-- Left: Menu -->
+        <div class="order-menu">
+          
+          <!-- Sticky Category Nav for Ordering -->
+          <div class="menu-filters reveal" id="order-filters" style="position:sticky; top:var(--nav-height); background:var(--warm-white); z-index:10; padding:1rem 0; justify-content:flex-start;">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div id="order-categories-container">
+            <!-- Categories rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Right: Cart -->
+        <div class="order-sidebar reveal reveal-d2">
+          <div class="cart-panel" id="cart-panel">
+            <h2 class="cart-panel__title" data-i18n="cart.title">Dein Warenkorb</h2>
+            <div id="cart-items">
+              <div class="cart-empty" data-i18n="cart.empty">Warenkorb ist leer</div>
+            </div>
+            <div class="cart-total">
+              <span class="cart-total__label" data-i18n="cart.total">Gesamt</span>
+              <span class="cart-total__value" id="cart-total-value">€0,00</span>
+            </div>
+            <button class="btn btn--primary cart-checkout" onclick="alert('Zur Kasse weiterleiten... (Demo)')" data-i18n="cart.checkout">Zur Kasse</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hide mobile bar on order page since we have the cart panel
+      renderNav(''); 
+      renderFooter();
+      
+      const filters = document.getElementById('order-filters');
+      const container = document.getElementById('order-categories-container');
+      
+      // Render menu grouped by category
+      MENU_CATEGORIES.forEach(cat => {
+        if (cat.id === 'all') return;
+        
+        // Add filter link
+        const filterBtn = document.createElement('a');
+        filterBtn.href = `#cat-${cat.id}`;
+        filterBtn.className = 'menu-filter';
+        filterBtn.innerHTML = `${cat.icon} ${tStr(cat.name)}`;
+        filters.appendChild(filterBtn);
+
+        // Add category section
+        const products = getProductsByCategory(cat.id);
+        if (products.length === 0) return;
+
+        const section = document.createElement('div');
+        section.id = `cat-${cat.id}`;
+        section.style.paddingTop = '100px'; // Offset for sticky nav
+        section.style.marginTop = '-80px';
+        section.className = 'reveal';
+        
+        section.innerHTML = `
+          <h2 style="font-family:var(--font-display); font-size:1.5rem; margin-bottom:1.25rem; padding-bottom:.5rem; border-bottom:1px solid var(--beige);">${tStr(cat.name)}</h2>
+          <div class="menu-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); margin-bottom:3rem;">
+            ${products.map(p => renderProductCard(p, { compact: true })).join('')}
+          </div>
+        `;
+        container.appendChild(section);
+      });
+
+      // Cart rendering logic
+      function renderCart() {
+        const items = Cart.getItems();
+        const itemsContainer = document.getElementById('cart-items');
+        const totalValue = document.getElementById('cart-total-value');
+        const checkoutBtn = document.querySelector('.cart-checkout');
+
+        if (items.length === 0) {
+          itemsContainer.innerHTML = `<div class="cart-empty" data-i18n="cart.empty.long">${translate('cart.empty.long')}</div>`;
+          totalValue.textContent = '€0,00';
+          checkoutBtn.style.opacity = '0.5';
+          checkoutBtn.style.pointerEvents = 'none';
+          return;
+        }
+
+        checkoutBtn.style.opacity = '1';
+        checkoutBtn.style.pointerEvents = 'auto';
+
+        itemsContainer.innerHTML = items.map(item => {
+          const product = getProductById(item.id);
+          if (!product) return '';
+          return `
+            <div class="cart-item">
+              <div class="cart-item__image">
+                ${product.image ? `<img src="${product.image}" alt="">` : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--beige);color:var(--text-muted);font-size:1.5rem;">${tStr(product.name).charAt(0)}</div>`}
+              </div>
+              <div class="cart-item__info">
+                <div class="cart-item__name">${tStr(product.name)}</div>
+                <div class="cart-item__price">${formatPrice(product.price * item.qty)}</div>
+              </div>
+              <div class="cart-item__actions">
+                <button class="cart-item__qty-btn" onclick="updateCartItem('${item.id}', -1)">−</button>
+                <span class="cart-item__qty">${item.qty}</span>
+                <button class="cart-item__qty-btn" onclick="updateCartItem('${item.id}', 1)">+</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        totalValue.textContent = formatPrice(Cart.getTotal());
+      }
+
+      // Global wrapper for onclick
+      window.updateCartItem = (id, delta) => {
+        const items = Cart.getItems();
+        const item = items.find(i => i.id === id);
+        if (item) {
+          Cart.updateQty(id, item.qty + delta);
+          renderCart();
+        }
+      };
+
+      // Override Cart.updateUI to also re-render the cart panel
+      const originalUpdateUI = Cart.updateUI;
+      Cart.updateUI = function() {
+        originalUpdateUI.call(this);
+        renderCart();
+      };
+
+      initRevealAnimations();
+      initSmoothScroll();
+      renderCart();
+      updateDOMTranslations(); // Ensure translated text is populated
+    });
+  </script>
+</body>
+</html>

@@ -3,502 +3,302 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MANTI HAUS — Handgemachte Manti. Zentralasiatische Tradition, neu gedacht für Deutschland. Entdecke authentische Manti in einem modernen Food-Konzept.">
-  <meta name="keywords" content="Manti Restaurant Deutschland, Manti Restaurant, Uzbekisches Restaurant, Zentralasiatische Küche, Manti bestellen, Manti in Deutschland, Handgemachte Manti">
+  <meta name="description" content="MANTI HAUS — Handgemachte Manti. Zentralasiatische Tradition, neu gedacht für Deutschland. Entdecke authentische Manti in unserem Restaurant.">
+  <meta name="keywords" content="Manti Restaurant Deutschland, Manti Restaurant, Uzbekisches Restaurant, Zentralasiatische Küche, Manti bestellen, Manti in Deutschland">
   <meta name="author" content="MANTI HAUS">
   <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="MANTI HAUS — Handmade Central Asian Food in Germany">
+  <meta property="og:title" content="MANTI HAUS — Handgemachte Manti in Deutschland">
   <meta property="og:description" content="Handgemachte Manti. Zentralasiatische Tradition. Neu gedacht für Deutschland.">
   <meta property="og:type" content="restaurant">
   <meta property="og:locale" content="de_DE">
-
   <title>MANTI HAUS — Handgemachte Manti | Zentralasiatische Küche in Deutschland</title>
-  
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="styles/main.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥟</text></svg>">
 </head>
 <body>
 
-  <!-- ====== NAVIGATION ====== -->
-  <nav class="nav" id="nav" role="navigation" aria-label="Hauptnavigation">
-    <div class="nav__inner">
-      <a href="#" class="nav__logo" id="nav-logo">MANTI HAUS</a>
-      <div class="nav__links" id="nav-links">
-        <a href="#about" class="nav__link">Über uns</a>
-        <a href="#menu" class="nav__link">Speisekarte</a>
-        <a href="#experience" class="nav__link">Erlebnis</a>
-        <a href="#story" class="nav__link">Geschichte</a>
-        <a href="#location" class="nav__link">Standort</a>
-        <a href="#order" class="btn nav__cta">Bestellen</a>
-      </div>
-      <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-
   <!-- ====== HERO ====== -->
   <header class="hero" id="hero">
     <div class="hero__bg">
-      <img src="images/hero_manti.jpg" alt="Handgemachte Manti auf einem Keramikteller mit Dampf, serviert im MANTI HAUS Restaurant" loading="eager" fetchpriority="high">
+      <img src="images/hero_manti.jpg" alt="Handgemachte Manti auf einem Keramikteller mit Dampf" loading="eager" fetchpriority="high">
     </div>
     <div class="hero__overlay"></div>
-    
-    <!-- Steam particles -->
     <div class="hero__steam" id="hero-steam" aria-hidden="true"></div>
-    
+
     <div class="hero__content">
-      <div class="hero__badge reveal">
-        Handgemacht · Jeden Tag frisch
-      </div>
-      <h1 class="hero__title reveal reveal-delay-1">
-        MANTI, <em>ABER ANDERS.</em>
-      </h1>
-      <p class="hero__subtitle reveal reveal-delay-2">
-        Handgemachte Manti. Zentralasiatische Tradition. Neu gedacht für Deutschland.
-      </p>
-      <div class="hero__actions reveal reveal-delay-3">
-        <a href="#menu" class="btn btn--primary" id="hero-cta-primary">Unsere Manti entdecken</a>
-        <a href="#about" class="btn btn--outline" id="hero-cta-secondary">Mehr über Manti Haus</a>
+      <div class="hero__badge reveal" data-i18n="home.badge">✦ 100% Handgemacht</div>
+      <h1 class="hero__title reveal reveal-d1" data-i18n="home.title">MANTI, <em>ABER ANDERS.</em></h1>
+      <p class="hero__subtitle reveal reveal-d2" data-i18n="home.subtitle">Handgemachte Manti. Zentralasiatische Tradition. Neu gedacht für Deutschland.</p>
+      <div class="hero__actions reveal reveal-d3">
+        <a href="speisekarte.html" class="btn btn--primary btn--lg" data-i18n="home.btn.menu">Speisekarte entdecken</a>
+        <a href="bestellen.html" class="btn btn--outline btn--lg" data-i18n="nav.order">Online bestellen</a>
       </div>
     </div>
-    
     <div class="hero__scroll" aria-hidden="true">
-      <span>Entdecken</span>
+      <span data-i18n="home.what.label">Entdecken</span>
       <div class="hero__scroll-line"></div>
     </div>
   </header>
 
-  <!-- ====== ABOUT ====== -->
-  <section class="section about" id="about" aria-labelledby="about-title">
+  <!-- ====== WHAT IS MANTI ====== -->
+  <section class="section" id="what-is-manti">
     <div class="container">
-      <div class="about__grid">
-        <div class="about__image-wrap reveal">
-          <img src="images/about_preparation.jpg" alt="Handgemachte Manti werden traditionell von Hand zubereitet — Teig, Füllung und Gewürze auf einem Holztisch" loading="lazy">
-          <div class="about__image-accent" aria-hidden="true"></div>
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <img src="images/about_preparation.jpg" alt="Manti werden von Hand zubereitet — Teig, Füllung und Gewürze" loading="lazy">
         </div>
-        <div class="about__content">
-          <div class="section__label reveal">Über uns</div>
-          <h2 class="section__title reveal reveal-delay-1" id="about-title">Was ist <em>MANTI HAUS?</em></h2>
-          <div class="about__text reveal reveal-delay-2">
-            <p>MANTI HAUS bringt eines der beliebtesten Gerichte Zentralasiens nach Deutschland: <strong>Manti.</strong></p>
-            <p>Kleine, handgemachte Teigtaschen, gefüllt mit saftigem Fleisch, Zwiebeln und ausgewählten Gewürzen.</p>
-            <p>Traditionelle Zubereitung trifft auf modernes Food-Konzept.</p>
+        <div>
+          <div class="section__label reveal" data-i18n="home.what.label">Entdecken</div>
+          <h2 class="section__title reveal reveal-d1" data-i18n="home.what.title">Was sind eigentlich <em>Manti?</em></h2>
+          <div class="about-text reveal reveal-d2">
+            <p data-i18n="home.what.text1">Manti sind kleine, handgemachte Teigtaschen, die traditionell gefüllt und gedämpft werden.</p>
+            <p data-i18n="home.what.text2"><strong>Außen zarter Teig.</strong><br>
+            <strong>Innen eine würzige Füllung.</strong><br>
+            Frisch gedämpft und direkt serviert.</p>
+            <p>Ein Bissen und du verstehst, warum Manti in Zentralasien seit Generationen zum Alltag gehören.</p>
           </div>
-          <div class="about__stats reveal reveal-delay-3">
-            <div class="about__stat">
-              <span class="about__stat-icon" aria-hidden="true">✋</span>
-              <span class="about__stat-text">100% Handgemacht</span>
-            </div>
-            <div class="about__stat">
-              <span class="about__stat-icon" aria-hidden="true">🌿</span>
-              <span class="about__stat-text">Frisch zubereitet</span>
-            </div>
-            <div class="about__stat">
-              <span class="about__stat-icon" aria-hidden="true">🌍</span>
-              <span class="about__stat-text">Zentralasiatische Küche</span>
-            </div>
+          <div style="margin-top:2rem" class="reveal reveal-d3">
+            <a href="speisekarte.html" class="btn btn--dark" data-i18n="home.what.btn">Manti entdecken →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== DISCOVER / WHAT ARE MANTI ====== -->
-  <section class="section discover" id="discover" aria-labelledby="discover-title">
+  <!-- ====== PHILOSOPHY / FEATURES ====== -->
+  <section class="section section--warm" id="philosophy">
     <div class="container">
-      <div class="discover__header reveal">
-        <div class="section__label" style="justify-content: center;">Entdecken</div>
-        <h2 class="section__title" id="discover-title" style="color: var(--cream);">Wenn du Manti noch nicht kennst…</h2>
-        <p class="discover__description">
-          Manti sind kleine Teigtaschen, die traditionell <strong>von Hand gefüllt und gedämpft</strong> werden.<br><br>
-          Außen zarter Teig.<br>
-          Innen eine würzige Füllung.<br>
-          Oben drauf unsere eigene Sauce.<br><br>
-          Ein Bissen und du verstehst, warum Manti in Zentralasien so beliebt sind.
-        </p>
+      <div style="text-align:center; margin-bottom:3rem;">
+        <div class="section__label section__label--center reveal" data-i18n="home.phil.label">Unsere Philosophie</div>
+        <h2 class="section__title reveal reveal-d1" style="text-align:center;" data-i18n="home.phil.title">Was uns <em>ausmacht.</em></h2>
       </div>
-      
-      <div class="discover__steps reveal reveal-delay-1">
-        <div class="discover__step active" id="discover-step-1" role="button" tabindex="0">
-          <span class="discover__step-number">01</span>
-          <span class="discover__step-icon" aria-hidden="true">🫓</span>
-          <h3 class="discover__step-title">Teig</h3>
-          <p class="discover__step-desc">Frischer Teig, dünn ausgerollt und in perfekte Quadrate geschnitten.</p>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <span class="feature-card__icon">✋</span>
+          <h3 class="feature-card__title" data-i18n="phil.handmade.title">Handgemacht</h3>
+          <p class="feature-card__desc" data-i18n="phil.handmade.desc">Jedes Manti wird von Hand geformt. Keine Maschinen, keine Abkürzungen.</p>
         </div>
-        <div class="discover__step" id="discover-step-2" role="button" tabindex="0">
-          <span class="discover__step-number">02</span>
-          <span class="discover__step-icon" aria-hidden="true">🥩</span>
-          <h3 class="discover__step-title">Füllung</h3>
-          <p class="discover__step-desc">Saftiges Fleisch, fein gehackte Zwiebeln und aromatische Gewürze.</p>
+        <div class="feature-card reveal reveal-d1">
+          <span class="feature-card__icon">🌱</span>
+          <h3 class="feature-card__title" data-i18n="phil.fresh.title">Frisch</h3>
+          <p class="feature-card__desc" data-i18n="phil.fresh.desc">Täglich frisch zubereitet. Wir machen keine Kompromisse bei der Qualität.</p>
         </div>
-        <div class="discover__step" id="discover-step-3" role="button" tabindex="0">
-          <span class="discover__step-number">03</span>
-          <span class="discover__step-icon" aria-hidden="true">♨️</span>
-          <h3 class="discover__step-title">Dampf</h3>
-          <p class="discover__step-desc">Schonend gedämpft, bis der Teig zart und die Füllung saftig ist.</p>
+        <div class="feature-card reveal reveal-d2">
+          <span class="feature-card__icon">🌏</span>
+          <h3 class="feature-card__title" data-i18n="phil.auth.title">Authentisch</h3>
+          <p class="feature-card__desc" data-i18n="phil.auth.desc">Inspiriert von zentralasiatischer Küche — Rezepte mit Geschichte.</p>
+        </div>
+        <div class="feature-card reveal reveal-d3">
+          <span class="feature-card__icon">✨</span>
+          <h3 class="feature-card__title" data-i18n="phil.modern.title">Modern</h3>
+          <p class="feature-card__desc" data-i18n="phil.modern.desc">Tradition trifft modernes Food-Konzept. Für den Geschmack von heute.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== MENU ====== -->
-  <section class="section menu" id="menu" aria-labelledby="menu-title">
+  <!-- ====== PROCESS ====== -->
+  <section class="section" id="process">
     <div class="container">
-      <div class="menu__header reveal">
-        <div class="section__label" style="justify-content: center;">Speisekarte</div>
-        <h2 class="section__title" id="menu-title">Unsere Manti</h2>
-        <p class="section__subtitle" style="margin: 0 auto;">Jede Variante handgemacht und mit Liebe zubereitet.</p>
+      <div style="text-align:center; margin-bottom:3rem;">
+        <div class="section__label section__label--center reveal" data-i18n="home.process.label">Unser Prozess</div>
+        <h2 class="section__title reveal reveal-d1" style="text-align:center;" data-i18n="home.process.title">Vom Teig bis auf <em>den Teller.</em></h2>
+        <p class="section__subtitle reveal reveal-d2" style="margin:0 auto;" data-i18n="home.process.subtitle">Jeder Schritt wird mit Sorgfalt und Hingabe ausgeführt.</p>
       </div>
-      
-      <div class="menu__filters reveal reveal-delay-1" role="tablist" aria-label="Menü-Kategorien">
-        <button class="menu__filter active" data-filter="all" role="tab" aria-selected="true" id="filter-all">Alle</button>
-        <button class="menu__filter" data-filter="manti" role="tab" aria-selected="false" id="filter-manti">Manti</button>
-        <button class="menu__filter" data-filter="vegetarisch" role="tab" aria-selected="false" id="filter-veg">Vegetarisch</button>
-        <button class="menu__filter" data-filter="beilagen" role="tab" aria-selected="false" id="filter-sides">Beilagen</button>
-        <button class="menu__filter" data-filter="getraenke" role="tab" aria-selected="false" id="filter-drinks">Getränke</button>
-      </div>
-      
-      <div class="menu__grid" id="menu-grid" role="tabpanel">
-        <!-- Classic Manti -->
-        <article class="menu__card reveal" data-category="manti" id="card-classic">
-          <div class="menu__card-image">
-            <img src="images/menu_classic.jpg" alt="Classic Manti — Handgemachte Manti mit Rindfleisch, serviert mit Tomaten-Sahne-Sauce" loading="lazy">
-            <span class="menu__card-tag">Beliebt</span>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">Classic Manti</h3>
-            <p class="menu__card-desc">Handgemachte Manti mit Rindfleisch, Zwiebeln und Gewürzen.</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">€ 12,90</span>
-              <button class="menu__card-btn" id="order-classic">Bestellen</button>
-            </div>
-          </div>
-        </article>
-        
-        <!-- Chicken Manti -->
-        <article class="menu__card reveal reveal-delay-1" data-category="manti" id="card-chicken">
-          <div class="menu__card-image">
-            <img src="images/menu_chicken.jpg" alt="Chicken Manti — Zarte Manti mit Hähnchen, Joghurt-Sauce, Dill und Minze" loading="lazy">
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">Chicken Manti</h3>
-            <p class="menu__card-desc">Zarte Manti mit Hähnchen, Zwiebeln und Kräutern.</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">€ 12,90</span>
-              <button class="menu__card-btn" id="order-chicken">Bestellen</button>
-            </div>
-          </div>
-        </article>
-        
-        <!-- Veggie Manti -->
-        <article class="menu__card reveal reveal-delay-2" data-category="manti vegetarisch" id="card-veggie">
-          <div class="menu__card-image">
-            <img src="images/menu_veggie.jpg" alt="Veggie Manti — Manti mit bunter Gemüsefüllung und Kräuter-Pesto-Sauce" loading="lazy">
-            <span class="menu__card-tag">Vegetarisch</span>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">Veggie Manti</h3>
-            <p class="menu__card-desc">Manti mit Gemüsefüllung und aromatischen Gewürzen.</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">€ 11,90</span>
-              <button class="menu__card-btn" id="order-veggie">Bestellen</button>
-            </div>
-          </div>
-        </article>
-        
-        <!-- Signature Manti -->
-        <article class="menu__card reveal reveal-delay-3" data-category="manti" id="card-signature">
-          <div class="menu__card-image">
-            <img src="images/menu_signature.jpg" alt="Signature Manti — Goldbraun angebratene Manti mit Haus-Sauce, Granatapfelkernen und essbaren Blüten" loading="lazy">
-            <span class="menu__card-tag">Signature</span>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">Signature Manti</h3>
-            <p class="menu__card-desc">Unsere besondere Hauskreation — einzigartig und unvergesslich.</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">€ 14,90</span>
-              <button class="menu__card-btn" id="order-signature">Bestellen</button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== EXPERIENCE / PROCESS ====== -->
-  <section class="section experience" id="experience" aria-labelledby="experience-title">
-    <div class="container">
-      <div class="experience__header reveal">
-        <div class="section__label" style="justify-content: center;">Unser Prozess</div>
-        <h2 class="section__title" id="experience-title">Vom Teig bis auf den Teller.</h2>
-        <p class="section__subtitle" style="margin: 0 auto;">Jeder Schritt wird mit Sorgfalt und Hingabe ausgeführt.</p>
-      </div>
-      
-      <div class="experience__timeline reveal reveal-delay-1" id="experience-timeline">
-        <div class="experience__step">
-          <div class="experience__step-number">01</div>
-          <span class="experience__step-icon" aria-hidden="true">🫓</span>
-          <h3 class="experience__step-title">Teig ausrollen</h3>
-          <p class="experience__step-desc">Frischer Teig wird von Hand zu hauchdünnen Blättern ausgerollt.</p>
+      <div class="process-grid reveal reveal-d2">
+        <div class="process-step">
+          <div class="process-step__num">01</div>
+          <span class="process-step__icon">🫓</span>
+          <h3 class="process-step__title" data-i18n="process.1.title">Teig</h3>
+          <p class="process-step__desc" data-i18n="process.1.desc">Frischer Teig wird von Hand dünn ausgerollt.</p>
         </div>
-        <div class="experience__step">
-          <div class="experience__step-number">02</div>
-          <span class="experience__step-icon" aria-hidden="true">🥄</span>
-          <h3 class="experience__step-title">Füllen</h3>
-          <p class="experience__step-desc">Jedes Stück wird sorgfältig mit der frischen Füllung befüllt.</p>
+        <div class="process-step">
+          <div class="process-step__num">02</div>
+          <span class="process-step__icon">🥄</span>
+          <h3 class="process-step__title" data-i18n="process.2.title">Füllen</h3>
+          <p class="process-step__desc" data-i18n="process.2.desc">Sorgfältig mit frischer Füllung befüllt.</p>
         </div>
-        <div class="experience__step">
-          <div class="experience__step-number">03</div>
-          <span class="experience__step-icon" aria-hidden="true">🤲</span>
-          <h3 class="experience__step-title">Falten</h3>
-          <p class="experience__step-desc">Die traditionelle Falttechnik verleiht jedem Manti seine einzigartige Form.</p>
+        <div class="process-step">
+          <div class="process-step__num">03</div>
+          <span class="process-step__icon">🤲</span>
+          <h3 class="process-step__title" data-i18n="process.3.title">Formen</h3>
+          <p class="process-step__desc" data-i18n="process.3.desc">Traditionelle Falttechnik für die einzigartige Form.</p>
         </div>
-        <div class="experience__step">
-          <div class="experience__step-number">04</div>
-          <span class="experience__step-icon" aria-hidden="true">♨️</span>
-          <h3 class="experience__step-title">Dämpfen</h3>
-          <p class="experience__step-desc">Langsam und schonend gedämpft für die perfekte Textur.</p>
+        <div class="process-step">
+          <div class="process-step__num">04</div>
+          <span class="process-step__icon">♨️</span>
+          <h3 class="process-step__title" data-i18n="process.4.title">Dämpfen</h3>
+          <p class="process-step__desc" data-i18n="process.4.desc">Langsam und schonend für die perfekte Textur.</p>
         </div>
-        <div class="experience__step">
-          <div class="experience__step-number">05</div>
-          <span class="experience__step-icon" aria-hidden="true">🍽️</span>
-          <h3 class="experience__step-title">Servieren</h3>
-          <p class="experience__step-desc">Mit unserer Hausmarinade und frischen Kräutern serviert.</p>
+        <div class="process-step">
+          <div class="process-step__num">05</div>
+          <span class="process-step__icon">🍽️</span>
+          <h3 class="process-step__title" data-i18n="process.5.title">Servieren</h3>
+          <p class="process-step__desc" data-i18n="process.5.desc">Mit Sauce und frischen Kräutern serviert.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== DIFFERENCE / FEATURES ====== -->
-  <section class="section difference" id="difference" aria-labelledby="difference-title">
+  <!-- ====== FEATURED MENU ====== -->
+  <section class="section section--warm" id="featured-menu">
     <div class="container">
-      <div class="difference__header reveal">
-        <div class="section__label" style="justify-content: center;">Warum MANTI HAUS</div>
-        <h2 class="section__title" id="difference-title">Der MANTI HAUS Unterschied.</h2>
+      <div style="text-align:center; margin-bottom:3rem;">
+        <div class="section__label section__label--center reveal" data-i18n="home.featured.label">Speisekarte</div>
+        <h2 class="section__title reveal reveal-d1" style="text-align:center;" data-i18n="home.featured.title">Unsere <em>Favoriten.</em></h2>
+        <p class="section__subtitle reveal reveal-d2" style="margin:0 auto;" data-i18n="home.featured.subtitle">Handgemacht, frisch gedämpft und mit Liebe serviert.</p>
       </div>
-      
-      <div class="difference__grid">
-        <div class="difference__card reveal" id="feature-handmade">
-          <span class="difference__card-icon" aria-hidden="true">✋</span>
-          <h3 class="difference__card-title">Handgemacht</h3>
-          <p class="difference__card-desc">Jedes Manti wird von Hand geformt. Keine Maschinen, keine Abkürzungen.</p>
-        </div>
-        <div class="difference__card reveal reveal-delay-1" id="feature-fresh">
-          <span class="difference__card-icon" aria-hidden="true">🌱</span>
-          <h3 class="difference__card-title">Frisch</h3>
-          <p class="difference__card-desc">Täglich frisch zubereitet. Wir machen keine Kompromisse bei der Qualität.</p>
-        </div>
-        <div class="difference__card reveal reveal-delay-2" id="feature-authentic">
-          <span class="difference__card-icon" aria-hidden="true">🌏</span>
-          <h3 class="difference__card-title">Authentisch</h3>
-          <p class="difference__card-desc">Inspiriert von zentralasiatischer Küche — Rezepte mit Geschichte.</p>
-        </div>
-        <div class="difference__card reveal reveal-delay-3" id="feature-modern">
-          <span class="difference__card-icon" aria-hidden="true">✨</span>
-          <h3 class="difference__card-title">Modern</h3>
-          <p class="difference__card-desc">Tradition trifft modernes Food-Konzept. Für den Geschmack von heute.</p>
-        </div>
+      <div class="menu-grid" id="featured-grid">
+        <!-- Rendered by JS -->
+      </div>
+      <div style="text-align:center; margin-top:2.5rem;" class="reveal">
+        <a href="speisekarte.html" class="btn btn--dark btn--lg" data-i18n="home.featured.btn">Alle Gerichte ansehen →</a>
       </div>
     </div>
   </section>
 
   <!-- ====== BRAND STORY ====== -->
-  <section class="section section--dark story" id="story" aria-labelledby="story-title">
-    <div class="story__bg" aria-hidden="true">
+  <section class="section section--dark story-section" id="story">
+    <div class="story-section__bg" aria-hidden="true">
       <img src="images/brand_story.jpg" alt="" loading="lazy">
     </div>
     <div class="container">
-      <div class="story__content reveal">
-        <div class="section__label" style="justify-content: center;">Unsere Geschichte</div>
-        <h2 class="section__title" id="story-title" style="color: var(--cream);">Eine Tradition.<br><em>Ein neues Zuhause.</em></h2>
-        <div class="story__text">
-          <p>Manti gehören in Zentralasien seit Generationen zum Alltag.</p>
-          <p>Bei <strong>MANTI HAUS</strong> bringen wir diese Tradition nach Deutschland.</p>
-          <p>Nicht als Museumsstück.</p>
-          <p>Sondern als modernes Essen, das man gerne mit Freunden, Familie und Kollegen teilt.</p>
+      <div class="story-section__content reveal">
+        <div class="section__label section__label--center" data-i18n="home.story.label">Unsere Geschichte</div>
+        <h2 class="section__title" style="color:var(--cream);text-align:center;" data-i18n="home.story.title">Eine Tradition.<br><em>Ein neues Zuhause.</em></h2>
+        <div class="story-section__text">
+          <p data-i18n="home.story.p1">Manti gehören in Zentralasien seit Generationen zum Alltag.</p>
+          <p data-i18n="home.story.p2">Bei <strong>MANTI HAUS</strong> bringen wir diese Tradition nach Deutschland.</p>
+          <p data-i18n="home.story.p3">Nicht als Museumsstück — sondern als modernes Essen, das man gerne mit Freunden, Familie und Kollegen teilt.</p>
         </div>
-        <div class="story__divider" aria-hidden="true"></div>
-        <p class="story__quote">"Gutes Essen verbindet — über alle Grenzen hinweg."</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== LOCATION ====== -->
-  <section class="section location" id="location" aria-labelledby="location-title">
-    <div class="container">
-      <div class="location__grid">
-        <div class="location__info">
-          <div class="section__label reveal">Standort</div>
-          <h2 class="section__title reveal reveal-delay-1" id="location-title">Besuch uns.</h2>
-          <p class="section__subtitle reveal reveal-delay-2">Erlebe MANTI HAUS persönlich. Wir freuen uns auf deinen Besuch.</p>
-          
-          <div class="location__details reveal reveal-delay-3">
-            <div class="location__item">
-              <span class="location__item-icon" aria-hidden="true">📍</span>
-              <div>
-                <div class="location__item-label">Adresse</div>
-                <div class="location__item-value">MANTI HAUS<br>Musterstraße 42<br>10115 Berlin, Deutschland</div>
-              </div>
-            </div>
-            <div class="location__item">
-              <span class="location__item-icon" aria-hidden="true">🕐</span>
-              <div>
-                <div class="location__item-label">Öffnungszeiten</div>
-                <div class="location__item-value">Mo – Fr: 11:00 – 22:00<br>Sa – So: 12:00 – 23:00</div>
-              </div>
-            </div>
-            <div class="location__item">
-              <span class="location__item-icon" aria-hidden="true">📞</span>
-              <div>
-                <div class="location__item-label">Telefon</div>
-                <div class="location__item-value">+49 30 12345678</div>
-              </div>
-            </div>
-            <div class="location__item">
-              <span class="location__item-icon" aria-hidden="true">✉️</span>
-              <div>
-                <div class="location__item-label">E-Mail</div>
-                <div class="location__item-value">hallo@mantihaus.de</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="location__cta reveal reveal-delay-4">
-            <a href="https://maps.google.com" class="btn btn--dark" target="_blank" rel="noopener" id="route-btn">
-              📍 Route planen
-            </a>
-          </div>
-        </div>
-        
-        <div class="location__map reveal reveal-delay-2">
-          <div class="location__map-placeholder" id="map-placeholder">
-            <span class="location__map-placeholder-icon" aria-hidden="true">🗺️</span>
-            <span class="location__map-placeholder-text">Google Maps</span>
-            <span class="location__map-placeholder-text" style="font-size: 0.75rem; opacity: 0.4;">Musterstraße 42, 10115 Berlin</span>
-          </div>
+        <div class="story-section__divider"></div>
+        <p class="story-section__quote" data-i18n="home.story.quote">"Gutes Essen verbindet — über alle Grenzen hinweg."</p>
+        <div style="margin-top:2rem;">
+          <a href="ueber-uns.html" class="btn btn--outline" data-i18n="home.story.btn">Mehr erfahren →</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ====== ORDER CTA ====== -->
-  <section class="section order-cta" id="order" aria-labelledby="order-title">
+  <section class="section section--burgundy cta-section" id="order-cta">
     <div class="container">
-      <div class="order-cta__content reveal">
-        <div class="section__label" style="justify-content: center; color: var(--gold-light);">Online bestellen</div>
-        <h2 class="section__title" id="order-title">Lust auf Manti?</h2>
-        <p class="order-cta__text">Warm, frisch und handgemacht. Bestelle deine Manti und probiere etwas Neues.</p>
-        <div class="order-cta__actions">
-          <a href="#" class="btn btn--white" id="order-online-btn">Online bestellen</a>
-          <a href="#menu" class="btn btn--outline-light" id="order-menu-btn">Speisekarte ansehen</a>
+      <div class="reveal">
+        <div class="section__label section__label--center" style="color:var(--gold-light);" data-i18n="cta.label">Online bestellen</div>
+        <h2 class="section__title" style="color:var(--cream);text-align:center;" data-i18n="cta.title">Lust auf <em>Manti?</em></h2>
+        <p class="cta-section__text" data-i18n="cta.text">Warm, frisch und handgemacht. Bestelle deine Manti und probiere etwas Neues.</p>
+        <div class="cta-section__actions">
+          <a href="bestellen.html" class="btn btn--white btn--lg" data-i18n="cta.btn1">Online bestellen</a>
+          <a href="speisekarte.html" class="btn btn--outline btn--lg" data-i18n="cta.btn2">Speisekarte ansehen</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== SOCIAL / INSTAGRAM ====== -->
-  <section class="section social" id="social" aria-labelledby="social-title">
+  <!-- ====== SOCIAL ====== -->
+  <section class="section" id="social">
     <div class="container">
-      <div class="social__header reveal">
-        <div class="section__label" style="justify-content: center;">Instagram</div>
-        <h2 class="section__title" id="social-title">Folge dem Duft.</h2>
-        <a href="https://instagram.com/manti.haus" class="social__handle" target="_blank" rel="noopener" id="instagram-link">
-          📸 @manti.haus
-        </a>
+      <div style="text-align:center; margin-bottom:2.5rem;" class="reveal">
+        <div class="section__label section__label--center" data-i18n="social.label">Instagram</div>
+        <h2 class="section__title" style="text-align:center;" data-i18n="social.title">Folge dem <em>Duft.</em></h2>
+        <a href="https://instagram.com/manti.haus" target="_blank" rel="noopener" style="color:var(--burgundy);font-weight:500;font-size:.9375rem;">📸 @manti.haus</a>
       </div>
     </div>
-    
-    <div class="social__grid reveal reveal-delay-1" id="social-grid">
-      <div class="social__item" id="social-1">
-        <img src="images/gallery_1.jpg" alt="Dampfende Manti mit Stäbchen — MANTI HAUS Instagram" loading="lazy">
-        <div class="social__item-overlay"><span class="social__item-icon">♥</span></div>
-      </div>
-      <div class="social__item" id="social-2">
-        <img src="images/gallery_2.jpg" alt="Manti Dinner Spread von oben — verschiedene Manti, Beilagen und Saucen" loading="lazy">
-        <div class="social__item-overlay"><span class="social__item-icon">♥</span></div>
-      </div>
-      <div class="social__item" id="social-3">
-        <img src="images/gallery_3.jpg" alt="Zwei Freundinnen teilen Manti im MANTI HAUS Restaurant" loading="lazy">
-        <div class="social__item-overlay"><span class="social__item-icon">♥</span></div>
-      </div>
-      <div class="social__item" id="social-4">
-        <img src="images/gallery_4.jpg" alt="Manti wird in Joghurt-Sauce getunkt — Close-up Food Photography" loading="lazy">
-        <div class="social__item-overlay"><span class="social__item-icon">♥</span></div>
-      </div>
-      <div class="social__item" id="social-5">
-        <img src="images/gallery_5.jpg" alt="Manti im Dampfkorb mit aufsteigendem Dampf" loading="lazy">
-        <div class="social__item-overlay"><span class="social__item-icon">♥</span></div>
-      </div>
-      <div class="social__item" id="social-6">
-        <img src="images/gallery_6.jpg" alt="Frische Zutaten für Manti — Gewürze, Mehl, Kräuter auf Holztisch" loading="lazy">
-        <div class="social__item-overlay"><span class="social__item-icon">♥</span></div>
-      </div>
+    <div class="social-grid reveal">
+      <div class="social-item"><img src="images/gallery_1.jpg" alt="MANTI HAUS Instagram — dampfende Manti" loading="lazy"><div class="social-item__overlay"><span class="social-item__icon">♥</span></div></div>
+      <div class="social-item"><img src="images/gallery_2.jpg" alt="MANTI HAUS Instagram — Dinner Spread" loading="lazy"><div class="social-item__overlay"><span class="social-item__icon">♥</span></div></div>
+      <div class="social-item"><img src="images/gallery_3.jpg" alt="MANTI HAUS Instagram — Freunde im Restaurant" loading="lazy"><div class="social-item__overlay"><span class="social-item__icon">♥</span></div></div>
+      <div class="social-item"><img src="images/gallery_4.jpg" alt="MANTI HAUS Instagram — Manti mit Joghurt" loading="lazy"><div class="social-item__overlay"><span class="social-item__icon">♥</span></div></div>
+      <div class="social-item"><img src="images/gallery_5.jpg" alt="MANTI HAUS Instagram — Dampfkorb" loading="lazy"><div class="social-item__overlay"><span class="social-item__icon">♥</span></div></div>
+      <div class="social-item"><img src="images/gallery_6.jpg" alt="MANTI HAUS Instagram — frische Zutaten" loading="lazy"><div class="social-item__overlay"><span class="social-item__icon">♥</span></div></div>
     </div>
   </section>
 
-  <!-- ====== FOOTER ====== -->
-  <footer class="footer" id="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <div class="footer__brand-name">MANTI HAUS</div>
-          <p class="footer__brand-desc">Handmade Central Asian Food in Germany. Tradition trifft Moderne — in jedem Bissen.</p>
-          <div class="footer__socials">
-            <a href="https://instagram.com/manti.haus" class="footer__social" aria-label="Instagram" target="_blank" rel="noopener" id="footer-instagram">📸</a>
-            <a href="https://tiktok.com/@mantihaus" class="footer__social" aria-label="TikTok" target="_blank" rel="noopener" id="footer-tiktok">🎵</a>
-            <a href="https://facebook.com/mantihaus" class="footer__social" aria-label="Facebook" target="_blank" rel="noopener" id="footer-facebook">👤</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer__title">Navigation</div>
-          <a href="#hero" class="footer__link">Home</a>
-          <a href="#menu" class="footer__link">Unsere Manti</a>
-          <a href="#about" class="footer__link">Über uns</a>
-          <a href="#menu" class="footer__link">Speisekarte</a>
-          <a href="#location" class="footer__link">Kontakt</a>
-        </div>
-        <div>
-          <div class="footer__title">Kontakt</div>
-          <a href="tel:+493012345678" class="footer__link">+49 30 12345678</a>
-          <a href="mailto:hallo@mantihaus.de" class="footer__link">hallo@mantihaus.de</a>
-          <span class="footer__link">Musterstraße 42</span>
-          <span class="footer__link">10115 Berlin</span>
-        </div>
-        <div>
-          <div class="footer__title">Rechtliches</div>
-          <a href="#" class="footer__link">Impressum</a>
-          <a href="#" class="footer__link">Datenschutz</a>
-          <a href="#" class="footer__link">AGB</a>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span class="footer__copyright">© 2026 MANTI HAUS. Alle Rechte vorbehalten.</span>
-        <div class="footer__legal">
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
-          <a href="#">AGB</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <script src="js/translations.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // ── Init Home Page ──
+    document.addEventListener('DOMContentLoaded', () => {
+      renderNav('home');
+      renderFooter();
+      renderMobileBar();
 
-  <script src="index.js"></script>
+      // Override nav style for hero
+      const nav = document.getElementById('nav');
+      const hero = document.getElementById('hero');
+      function updateHeroNav() {
+        if (window.scrollY < hero.offsetHeight - 100) {
+          nav.style.background = 'transparent';
+          nav.style.borderBottomColor = 'transparent';
+          nav.querySelector('.nav__logo').style.color = 'var(--cream)';
+          nav.querySelectorAll('.nav__link').forEach(l => { l.style.color = 'rgba(255,255,255,.8)'; });
+          nav.querySelector('.nav__cart-icon') && (nav.querySelector('.nav__cart-icon').style.color = 'var(--cream)');
+          nav.querySelectorAll('.nav__toggle span').forEach(s => { s.style.background = 'var(--cream)'; });
+        } else {
+          nav.style.background = '';
+          nav.style.borderBottomColor = '';
+          nav.querySelector('.nav__logo').style.color = '';
+          nav.querySelectorAll('.nav__link').forEach(l => { l.style.color = ''; });
+          nav.querySelector('.nav__cart-icon') && (nav.querySelector('.nav__cart-icon').style.color = '');
+          nav.querySelectorAll('.nav__toggle span').forEach(s => { s.style.background = ''; });
+        }
+      }
+      window.addEventListener('scroll', updateHeroNav, { passive: true });
+      updateHeroNav();
 
-  <!-- Schema.org Structured Data for Local SEO -->
+      // Steam
+      const steam = document.getElementById('hero-steam');
+      function createSteam() {
+        const p = document.createElement('div');
+        p.className = 'steam-particle';
+        const size = Math.random() * 28 + 12;
+        p.style.width = p.style.height = size + 'px';
+        p.style.left = (Math.random() * 180 + 50) + 'px';
+        p.style.setProperty('--drift', (Math.random() - .5) * 70 + 'px');
+        const dur = Math.random() * 3 + 2.5;
+        p.style.animationDuration = dur + 's';
+        p.style.animationDelay = (Math.random() * 1.5) + 's';
+        steam.appendChild(p);
+        setTimeout(() => p.remove(), (dur + 2) * 1000);
+      }
+      for (let i = 0; i < 6; i++) createSteam();
+      setInterval(() => {
+        if (hero.getBoundingClientRect().bottom > 0) createSteam();
+      }, 700);
+
+      // Featured products
+      const grid = document.getElementById('featured-grid');
+      getFeaturedProducts().forEach(product => {
+        grid.innerHTML += renderProductCard(product);
+      });
+
+      // Click cards to open modal
+      grid.addEventListener('click', e => {
+        const card = e.target.closest('.card');
+        const btn = e.target.closest('.card__btn');
+        if (btn) return; // Let the add-to-cart handler work
+        if (card) openProductModal(card.dataset.id);
+      });
+
+      initRevealAnimations();
+      initRevealAnimations();
+      updateDOMTranslations(); // Ensure translated text is populated
+    });
+  </script>
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "MANTI HAUS",
-    "description": "Handgemachte Manti — Zentralasiatische Küche in Deutschland. Traditionelle Zubereitung trifft auf modernes Food-Konzept.",
+    "description": "Handgemachte Manti — Zentralasiatische Küche in Deutschland.",
     "url": "https://mantihaus.de",
     "telephone": "+493012345678",
-    "email": "hallo@mantihaus.de",
+    "email": "info@mantihaus.de",
+    "servesCuisine": ["Central Asian", "Uzbek"],
+    "priceRange": "€€",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Musterstraße 42",
@@ -506,22 +306,12 @@
       "postalCode": "10115",
       "addressCountry": "DE"
     },
-    "servesCuisine": ["Central Asian", "Uzbek"],
-    "priceRange": "€€",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "11:00",
-        "closes": "22:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday", "Sunday"],
-        "opens": "12:00",
-        "closes": "23:00"
-      }
-    ]
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "11:00",
+      "closes": "22:00"
+    }
   }
   </script>
 </body>
