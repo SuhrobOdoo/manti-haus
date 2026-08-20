@@ -43,9 +43,9 @@
   <!-- ====== WHAT IS MANTI ====== -->
   <section class="section" id="what-is-manti">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image reveal">
-          <img src="images/about_preparation.jpg" alt="Manti werden von Hand zubereitet — Teig, Füllung und Gewürze" loading="lazy">
+      <div class="phi-grid">
+        <div class="phi-grid__media reveal">
+          <img src="images/about_preparation.jpg" alt="Manti werden von Hand zubereitet" loading="lazy">
         </div>
         <div>
           <div class="section__label reveal" data-i18n="home.what.label">Entdecken</div>
@@ -55,9 +55,8 @@
             <p data-i18n="home.what.text2"><strong>Außen zarter Teig.</strong><br>
             <strong>Innen eine würzige Füllung.</strong><br>
             Frisch gedämpft und direkt serviert.</p>
-            <p>Ein Bissen und du verstehst, warum Manti in Zentralasien seit Generationen zum Alltag gehören.</p>
           </div>
-          <div style="margin-top:2rem" class="reveal reveal-d3">
+          <div style="margin-top:var(--space-lg)" class="reveal reveal-d3">
             <a href="speisekarte.html" class="btn btn--dark" data-i18n="home.what.btn">Manti entdecken →</a>
           </div>
         </div>
@@ -65,14 +64,31 @@
     </div>
   </section>
 
-  <!-- ====== PHILOSOPHY / FEATURES ====== -->
-  <section class="section section--warm" id="philosophy">
+  <!-- ====== FEATURED MENU ====== -->
+  <section class="section section--warm" id="featured-menu">
     <div class="container">
-      <div style="text-align:center; margin-bottom:3rem;">
+      <div style="text-align:center; margin-bottom:var(--space-xl);">
+        <div class="section__label section__label--center reveal" data-i18n="home.featured.label">Speisekarte</div>
+        <h2 class="section__title reveal reveal-d1" style="text-align:center;" data-i18n="home.featured.title">Unsere <em>Favoriten.</em></h2>
+        <p class="section__subtitle reveal reveal-d2" style="margin:0 auto;" data-i18n="home.featured.subtitle">Handgemacht, frisch gedämpft und mit Liebe serviert.</p>
+      </div>
+      <div class="menu-grid" id="featured-grid">
+        <!-- Rendered by JS -->
+      </div>
+      <div style="text-align:center; margin-top:var(--space-lg);" class="reveal">
+        <a href="speisekarte.html" class="btn btn--dark btn--lg" data-i18n="home.featured.btn">Alle Gerichte ansehen →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PHILOSOPHY / WHY MANTI HAUS ====== -->
+  <section class="section" id="philosophy">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:var(--space-xl);">
         <div class="section__label section__label--center reveal" data-i18n="home.phil.label">Unsere Philosophie</div>
         <h2 class="section__title reveal reveal-d1" style="text-align:center;" data-i18n="home.phil.title">Was uns <em>ausmacht.</em></h2>
       </div>
-      <div class="features-grid">
+      <div class="features-grid" style="gap: var(--space-xl);">
         <div class="feature-card reveal">
           <span class="feature-card__icon">✋</span>
           <h3 class="feature-card__title" data-i18n="phil.handmade.title">Handgemacht</h3>
@@ -98,9 +114,9 @@
   </section>
 
   <!-- ====== PROCESS ====== -->
-  <section class="section" id="process">
+  <section class="section section--warm" id="process">
     <div class="container">
-      <div style="text-align:center; margin-bottom:3rem;">
+      <div style="text-align:center; margin-bottom:var(--space-xl);">
         <div class="section__label section__label--center reveal" data-i18n="home.process.label">Unser Prozess</div>
         <h2 class="section__title reveal reveal-d1" style="text-align:center;" data-i18n="home.process.title">Vom Teig bis auf <em>den Teller.</em></h2>
         <p class="section__subtitle reveal reveal-d2" style="margin:0 auto;" data-i18n="home.process.subtitle">Jeder Schritt wird mit Sorgfalt und Hingabe ausgeführt.</p>
@@ -140,19 +156,28 @@
     </div>
   </section>
 
-  <!-- ====== FEATURED MENU ====== -->
-  <section class="section section--warm" id="featured-menu">
+  <!-- ====== MANTI BOX ====== -->
+  <section class="section" id="manti-box">
     <div class="container">
-      <div style="text-align:center; margin-bottom:3rem;">
-        <div class="section__label section__label--center reveal" data-i18n="home.featured.label">Speisekarte</div>
-        <h2 class="section__title reveal reveal-d1" style="text-align:center;" data-i18n="home.featured.title">Unsere <em>Favoriten.</em></h2>
-        <p class="section__subtitle reveal reveal-d2" style="margin:0 auto;" data-i18n="home.featured.subtitle">Handgemacht, frisch gedämpft und mit Liebe serviert.</p>
-      </div>
-      <div class="menu-grid" id="featured-grid">
-        <!-- Rendered by JS -->
-      </div>
-      <div style="text-align:center; margin-top:2.5rem;" class="reveal">
-        <a href="speisekarte.html" class="btn btn--dark btn--lg" data-i18n="home.featured.btn">Alle Gerichte ansehen →</a>
+      <div class="phi-grid phi-grid--reverse">
+        <div>
+          <div class="section__label reveal" data-i18n="nav.box">Manti Box</div>
+          <h2 class="section__title reveal reveal-d1">Deine Manti.<br><em>Wo du willst.</em></h2>
+          <div class="about-text reveal reveal-d2">
+            <p>Egal ob Büro, Park oder zu Hause. Unsere speziell entwickelten Manti-Boxen halten deine Dumplings frisch und warm.</p>
+            <ul style="margin-top:var(--space-md); padding-left:1rem; color:var(--text-secondary); line-height:1.8;">
+              <li>✓ Nachhaltige Verpackung</li>
+              <li>✓ Perfekt portioniert</li>
+              <li>✓ Auslaufschutz für Dips</li>
+            </ul>
+          </div>
+          <div style="margin-top:var(--space-lg)" class="reveal reveal-d3">
+            <a href="manti-box.html" class="btn btn--primary">Manti Box entdecken →</a>
+          </div>
+        </div>
+        <div class="phi-grid__media reveal">
+          <img src="images/manti_box_packaging.jpg" alt="Manti Box Takeaway Packaging" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
@@ -173,8 +198,42 @@
         </div>
         <div class="story-section__divider"></div>
         <p class="story-section__quote" data-i18n="home.story.quote">"Gutes Essen verbindet — über alle Grenzen hinweg."</p>
-        <div style="margin-top:2rem;">
+        <div style="margin-top:var(--space-md);">
           <a href="ueber-uns.html" class="btn btn--outline" data-i18n="home.story.btn">Mehr erfahren →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FRANCHISE CTA ====== -->
+  <section class="section section--warm" id="franchise-cta">
+    <div class="container">
+      <div style="background:var(--cream-light); padding:var(--space-2xl) var(--space-xl); border-radius:var(--radius-xl); text-align:center; box-shadow:var(--shadow-md);" class="reveal">
+        <div class="section__label section__label--center" style="color:var(--gold);" data-i18n="nav.franchise">Franchise</div>
+        <h2 class="section__title">Werde Teil von <em>Manti Haus.</em></h2>
+        <p style="color:var(--text-secondary); max-width:600px; margin:0 auto var(--space-lg);">Du liebst gutes Essen und suchst nach einem modernen, zukunftssicheren Gastro-Konzept? Starte deine eigene Manti Haus Filiale.</p>
+        <a href="franchise.html" class="btn btn--dark btn--lg">Franchise-Broschüre anfordern</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== LOCATION / CONTACT ====== -->
+  <section class="section section--dark" id="location">
+    <div class="container">
+      <div class="phi-grid">
+        <div class="reveal">
+          <div class="section__label" style="color:var(--gold-light);" data-i18n="nav.contact">Kontakt</div>
+          <h2 class="section__title" style="color:var(--cream);">Komm <em>vorbei.</em></h2>
+          <div style="color:var(--beige); line-height:1.8; margin-bottom:var(--space-lg);">
+            <p><strong>MANTI HAUS Heilbronn</strong></p>
+            <p>Sülmerstraße 42<br>74072 Heilbronn</p>
+            <p style="margin-top:var(--space-sm);"><strong>Öffnungszeiten:</strong><br>Montag - Sonntag: 11:00 - 22:00 Uhr</p>
+          </div>
+          <a href="kontakt.html" class="btn btn--outline">Anfahrt planen</a>
+        </div>
+        <div class="phi-grid__media reveal" style="background:#3D3530; height:300px; display:flex; align-items:center; justify-content:center; border-radius:var(--radius-lg);">
+          <!-- Map Placeholder -->
+          <span style="color:var(--beige); opacity:0.5;">[ Google Maps Integration ]</span>
         </div>
       </div>
     </div>
@@ -228,6 +287,7 @@
       const nav = document.getElementById('nav');
       const hero = document.getElementById('hero');
       function updateHeroNav() {
+        if (!hero || !nav) return;
         if (window.scrollY < hero.offsetHeight - 100) {
           nav.style.background = 'transparent';
           nav.style.borderBottomColor = 'transparent';
@@ -250,6 +310,7 @@
       // Steam
       const steam = document.getElementById('hero-steam');
       function createSteam() {
+        if (!steam) return;
         const p = document.createElement('div');
         p.className = 'steam-particle';
         const size = Math.random() * 28 + 12;
@@ -264,25 +325,33 @@
       }
       for (let i = 0; i < 6; i++) createSteam();
       setInterval(() => {
-        if (hero.getBoundingClientRect().bottom > 0) createSteam();
+        if (hero && hero.getBoundingClientRect().bottom > 0) createSteam();
       }, 700);
 
       // Featured products
-      const grid = document.getElementById('featured-grid');
-      getFeaturedProducts().forEach(product => {
-        grid.innerHTML += renderProductCard(product);
-      });
+      try {
+        const grid = document.getElementById('featured-grid');
+        if (grid) {
+          getFeaturedProducts().forEach(product => {
+            grid.innerHTML += renderProductCard(product);
+          });
+          
+          grid.addEventListener('click', e => {
+            const card = e.target.closest('.card');
+            const btn = e.target.closest('.card__btn');
+            if (btn) return; // Let the add-to-cart handler work
+            if (card && window.openProductModal) window.openProductModal(card.dataset.id);
+          });
+        }
+      } catch (err) {
+        console.error("Failed to render featured products:", err);
+      }
 
-      // Click cards to open modal
-      grid.addEventListener('click', e => {
-        const card = e.target.closest('.card');
-        const btn = e.target.closest('.card__btn');
-        if (btn) return; // Let the add-to-cart handler work
-        if (card) openProductModal(card.dataset.id);
-      });
-
-      initRevealAnimations();
-      updateDOMTranslations(); // Ensure translated text is populated
+      try {
+        updateDOMTranslations(); // Ensure translated text is populated
+      } catch (err) {
+        console.error("Translation failed:", err);
+      }
     });
   </script>
 

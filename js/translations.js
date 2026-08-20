@@ -19,6 +19,16 @@ const TRANSLATIONS = {
     en: 'About',
     ru: 'О нас'
   },
+  'nav.box': {
+    de: 'Manti Box',
+    en: 'Manti Box',
+    ru: 'Манти Бокс'
+  },
+  'nav.franchise': {
+    de: 'Franchise',
+    en: 'Franchise',
+    ru: 'Франшиза'
+  },
   'nav.contact': {
     de: 'Kontakt',
     en: 'Contact',

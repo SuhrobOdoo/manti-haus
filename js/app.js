@@ -123,7 +123,9 @@ function renderNav(currentPage = '') {
   const pages = [
     { href: 'index.html', label: 'nav.home', id: 'home' },
     { href: 'speisekarte.html', label: 'nav.menu', id: 'speisekarte' },
+    { href: 'manti-box.html', label: 'nav.box', id: 'manti-box' },
     { href: 'ueber-uns.html', label: 'nav.about', id: 'ueber-uns' },
+    { href: 'franchise.html', label: 'nav.franchise', id: 'franchise' },
     { href: 'kontakt.html', label: 'nav.contact', id: 'kontakt' }
   ];
 
@@ -407,6 +409,7 @@ function initSmoothScroll() {
 
 // ─── INIT ───
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('js-enabled');
   initRevealAnimations();
   initSmoothScroll();
 
